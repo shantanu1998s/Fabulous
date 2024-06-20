@@ -126,6 +126,12 @@ header ul.menu li a:hover {
     border-radius: 5px;
 }
 
+.get-btn{
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+
 #hero .btn:hover {
     background: #ff1a1a;
 }
