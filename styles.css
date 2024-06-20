@@ -10,12 +10,18 @@ body {
     line-height: 1.6;
     background: #f4f4f4;
     color: #333;
+    margin: 0; /* Reset default margin */
 }
 
 header {
-    background: #333;
+    background: transparent; /* Transparent header */
     color: #fff;
     padding: 10px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure header is on top */
 }
 
 header nav {
@@ -25,7 +31,6 @@ header nav {
     max-width: 1100px;
     margin: auto;
     padding: 0 20px;
-    position: relative;
 }
 
 header .logo {
@@ -74,17 +79,33 @@ header ul.menu li a:hover {
 }
 
 #hero {
-    background: url('hero.jpg') no-repeat center center/cover;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
+    position: static;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Ensure video does not overflow */
+}
+
+#hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire section */
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+    z-index: -1; /* Place video behind other content */
 }
 
 #hero .hero-content {
-    max-width: 700px;
+    position: relative;
+    z-index: 1; /* Ensure content is above video */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    text-align: center;
 }
 
 #hero h1 {
@@ -237,11 +258,11 @@ footer p {
     }
 
     header ul.menu {
-        position: fixed;
+        position: absolute;
         top: 60px; /* Adjust as per your header height */
         left: 0;
         width: 100%;
-        background-color: #333;
+        background-color: #333333eb;
         flex-direction: column;
         align-items: center;
         transform: translateX(100%);
