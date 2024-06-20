@@ -1,0 +1,282 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header input[type="checkbox"] {
+    display: none;
+}
+
+header .menu-icon {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px; /* Position on the right side */
+    top: 50%; /* Vertically center */
+    transform: translateY(-50%);
+}
+
+header ul.menu {
+    list-style: none;
+    display: flex;
+}
+
+header ul.menu li {
+    margin-right: 20px;
+}
+
+header ul.menu li:last-child {
+    margin-right: 0;
+}
+
+header ul.menu li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: background 0.3s, color 0.3s;
+}
+
+header ul.menu li a:hover {
+    background: #575757;
+    border-radius: 5px;
+}
+
+#hero {
+    background: url('hero.jpg') no-repeat center center/cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+#hero .hero-content {
+    max-width: 700px;
+}
+
+#hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+#hero .btn {
+    padding: 10px 20px;
+    background: #ff4a4a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#hero .btn:hover {
+    background: #ff1a1a;
+}
+
+section {
+    padding: 20px;
+    max-width: 1100px;
+    margin: 20px auto;
+}
+
+section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.service-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.contact-form h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing of textarea */
+}
+
+.contact-form button {
+    padding: 12px 30px;
+    background: #ff4a4a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.contact-form button:hover {
+    background: #ff1a1a;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    transition: background 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+    background: #ff4a4a;
+    color: #fff;
+}
+
+/* Responsive styles for small devices */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .menu-icon {
+        display: block; /* Show the menu icon */
+    }
+
+    header input[type="checkbox"] {
+        display: none; /* Hide the checkbox */
+    }
+
+    header ul.menu {
+        position: fixed;
+        top: 60px; /* Adjust as per your header height */
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    header input[type="checkbox"]:checked ~ ul.menu {
+        transform: translateX(0);
+    }
+
+    header ul.menu li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    header ul.menu li a {
+        padding: 10px 0;
+        width: 100%;
+        display: block;
+    }
+
+    #hero h1 {
+        font-size: 36px;
+    }
+
+    #hero p {
+        font-size: 18px;
+    }
+
+    .service-item {
+        width: 100%;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+}
