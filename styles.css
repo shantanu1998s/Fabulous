@@ -286,6 +286,12 @@ footer p {
         margin: 10px 0;
     }
 
+    .get-btn{
+        border: 1px solid white;
+        border-radius: 5px;
+        width: 10%;
+    }
+
     header ul.menu li a {
         padding: 10px 0;
         width: 100%;
